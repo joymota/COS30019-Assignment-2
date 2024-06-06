@@ -12,3 +12,4 @@ c:\Users\Joshua\Desktop\University\2024\COS30019\Assignment 2\Interference Engin
 c:\Users\Joshua\Desktop\University\2024\COS30019\Assignment 2\Interference Engine\obj\Debug\net8.0\Interference Engine.pdb
 c:\Users\Joshua\Desktop\University\2024\COS30019\Assignment 2\Interference Engine\obj\Debug\net8.0\Interference Engine.genruntimeconfig.cache
 c:\Users\Joshua\Desktop\University\2024\COS30019\Assignment 2\Interference Engine\obj\Debug\net8.0\ref\Interference Engine.dll
+c:\Users\Joshua\Desktop\University\2024\COS30019\Assignment 2\Interference Engine\obj\Debug\net8.0\Interference Engine.sourcelink.json

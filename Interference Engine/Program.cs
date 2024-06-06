@@ -16,15 +16,13 @@ namespace IEngine {
             if (FileReader.doesFileExist(filename) == false) {
                 Console.WriteLine(filename + "cant be found, please try again.");
             } else {
-                FileReader.ReadFile(filename);
-                KnowledgeBase KB = new KnowledgeBase();
-                //Clone the fileReaders clauses list to the knowledge base. 
-                KB.HornClauses = new List<string>(FileReader.clauses);
+                KnowledgeBase.ReadFile(filename);
+                ////test if the list got transfered properly
+                //Console.WriteLine(KnowledgeBase.HornClauses[0]);
 
-                //test if the list got transfered properly
-                Console.WriteLine(KB.HornClauses[0]);
+                ForwardChaining.Solve();
 
-
+/*
                 switch (args[0].ToLower()) {
                     case "tt": {
                         
@@ -40,7 +38,8 @@ namespace IEngine {
 
                         break;
                     }
-                } 
+                }
+                */ 
             }
         }
 

@@ -6,18 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
 using System.Dynamic;
+using System.Text.RegularExpressions;
 
 namespace IEngine {
 
-    public class KnowledgeBase { 
+    public static class KnowledgeBase { 
 
-        private List<string> hornClauses = new List<string>(); 
+        public static List<string> hornClauses = new List<string>(); 
+        public static string[] draftList {get; set;}  
+        public static string Query {get; set;}  
 
-        public KnowledgeBase()  {
-            
-        }
 
-        public List<string> HornClauses
+        public static List<string> HornClauses
         {
             get
             {
@@ -27,6 +27,30 @@ namespace IEngine {
             {
                 hornClauses = value;
             }
+        }
+
+        public static void ReadFile(string filename) {
+            //Read the file into temporary list
+            draftList = File.ReadAllLines(filename);
+
+            //Remove whitespaces and split TELL from temporary list by ; to get horn clauses
+            draftList[1] = draftList[1].Replace(" ", "");
+            hornClauses = Regex.Split(draftList[1], ";").ToList();
+
+            //Store query from temporary list
+            Query = draftList[3].Replace(" ", "");
+
+            //Console.WriteLine(hornClauses[2]);
+            //Console.WriteLine(Query);
+        }
+
+        //check if file exists
+        public static bool doesFileExist(string filename) {
+            bool exist = false;
+            if (File.Exists(filename)) {
+                exist = true;
+            }
+            return exist;
         }
 
 

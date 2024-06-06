@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj": {}
+    "c:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj": {
+    "c:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj",
+        "projectUniqueName": "c:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj",
         "projectName": "Interference Engine",
-        "projectPath": "C:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj",
+        "projectPath": "c:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\Interference Engine.csproj",
         "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\obj\\",
+        "outputPath": "c:\\Users\\Joshua\\Desktop\\University\\2024\\COS30019\\Assignment 2\\Interference Engine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config"
