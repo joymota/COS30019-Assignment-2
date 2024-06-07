@@ -73,7 +73,7 @@ namespace IEngine {
                        
         }
 
-        //assigns the Knowledge base list to appropriate lists for manipulation
+        //assigns the Knowledge base list to appropriate lists for manipulation, for all Dictionary, list and queue. 
         public static void sortSymbols()
         {
             foreach (string k in KB) 
@@ -110,36 +110,7 @@ namespace IEngine {
             return count;
         }
 
-        //tests the output of the queue for testing purposes
-        public static void testDict() {
-            foreach (KeyValuePair<string, int> pair in clauseCounts)
-            {
-                Console.WriteLine($"Entry: {pair.Key}, Letter Count: {pair.Value}");
-            }    
-        }
-
-        public static void testQueue() {
-            foreach(var c in trueClausesQueue)
-            {
-                Console.WriteLine("Queue:" + c);
-            }
-        }
-
-        public static void testList() {
-            foreach(string c in trueClausesList)
-            {
-                Console.WriteLine(c + ",");
-            }
-        }
-
-        public static bool checkGoal() {
-            if (trueClausesList.Contains(KnowledgeBase.Query))
-                {
-                    return true;
-                }
-            return false;
-        }
-
+        //prints result
         public static void printResult() 
         {
             Console.Write("YES: ");
@@ -148,10 +119,57 @@ namespace IEngine {
                 Console.Write(c + ",");
             } 
         }
+
+        //Checks if goal is found in true clause list
+        public static bool checkGoal() 
+        {
+            if (trueClausesList.Contains(KnowledgeBase.Query))
+                {
+                    return true;
+                }
+            return false;
+        }
+
+        //next 3 methods were used for testing purposes only
+        //tests the output of the Dictionary
+        public static void testDict() {
+            foreach (KeyValuePair<string, int> pair in clauseCounts)
+            {
+                Console.WriteLine($"Entry: {pair.Key}, Letter Count: {pair.Value}");
+            }    
+        }
+
+        //tests output of Queue
+        public static void testQueue() {
+            foreach(var c in trueClausesQueue)
+            {
+                Console.WriteLine("Queue:" + c);
+            }
+        }
+
+        //Tests output of list
+        public static void testList() {
+            foreach(string c in trueClausesList)
+            {
+                Console.WriteLine(c + ",");
+            }
+        }
+
+
+
     }
 }
 
 
 /* https://builtin.com/artificial-intelligence/forward-chaining-vs-backward-chaining#:~:text=Forward%20chaining%20is%20a%20form,facts%20that%20support%20the%20goal.
+i used this website to help me understand forward chaining. 
 
-psuedocode for FC will follow here soon */
+psuedocode for FC 
+
+1. Apply value to clauses based on how many are needed to fulfil conditions --> e.g. a=>b, value assigned is 1, since only 1 symbol is required to prove b is true
+2. Loop through and find out which clauses are known to be true, put them in a seperate list.
+3. Put this list in a Queue, dequeue one, loop through clause dictionary and minus one from dictionary key value whenever one of its conditions are determined to be true from current true proposition symbol
+4. If key value of clause becomes 0, if theres a symbol in clause which doesnt currently exist in list of true proposition symbols, add to list and enqueue to end of queue.
+5. Check if goal symbol is in true proposition symbol list. If not, dequeue next symbol and repeat process until goal state reached or queue is empty. 
+
+*/
