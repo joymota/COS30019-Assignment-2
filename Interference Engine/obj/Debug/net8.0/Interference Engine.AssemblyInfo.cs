@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Interference Engine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3072cc34f53d10ee0c44c8e4ed5596f10d35e6ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce52a85e5668229628fb828cf595201cfe43bc27")]
 [assembly: System.Reflection.AssemblyProductAttribute("Interference Engine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Interference Engine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

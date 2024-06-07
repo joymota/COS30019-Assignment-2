@@ -36,6 +36,7 @@ namespace IEngine {
             //Remove whitespaces and split TELL from temporary list by ; to get horn clauses
             draftList[1] = draftList[1].Replace(" ", "");
             hornClauses = Regex.Split(draftList[1], ";").ToList();
+            hornClauses.RemoveAll(string.IsNullOrEmpty);
 
             //Store query from temporary list
             Query = draftList[3].Replace(" ", "");
