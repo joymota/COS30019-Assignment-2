@@ -21,6 +21,7 @@ namespace IEngine {
                 //Console.WriteLine(KnowledgeBase.HornClauses[0]);
 
                 ForwardChaining.Solve();
+                BackwardChaining.Solve();
 
 /*
                 switch (args[0].ToLower()) {

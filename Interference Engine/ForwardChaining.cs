@@ -53,24 +53,15 @@ namespace IEngine {
 
                                 if(checkGoal())
                                 {
-                                    var = true;
-                                    break;
+                                    printResult();
+                                    return;
                                 }
                             }
                         }
                     }
                 }
             }
-
-            if(var == true)
-            {
-                printResult();
-            }
-            else
-            {
-                Console.WriteLine("Goal could not be found");
-            }
-                       
+            Console.WriteLine("FC Goal could not be found");                      
         }
 
         //assigns the Knowledge base list to appropriate lists for manipulation, for all Dictionary, list and queue. 
@@ -114,20 +105,13 @@ namespace IEngine {
         public static void printResult() 
         {
             Console.Write("YES: ");
-            foreach (string c in trueClausesList)
-            {
-                Console.Write(c + ",");
-            } 
+            Console.WriteLine(string.Join(", ", trueClausesList));
         }
 
         //Checks if goal is found in true clause list
         public static bool checkGoal() 
         {
-            if (trueClausesList.Contains(KnowledgeBase.Query))
-                {
-                    return true;
-                }
-            return false;
+            return trueClausesList.Contains(KnowledgeBase.Query);
         }
 
         //next 3 methods were used for testing purposes only
