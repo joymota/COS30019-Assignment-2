@@ -17,8 +17,6 @@ namespace IEngine {
                 Console.WriteLine(filename + "cant be found, please try again.");
             } else {
                 KnowledgeBase.ReadFile(filename);
-                ////test if the list got transfered properly
-                //Console.WriteLine(KnowledgeBase.HornClauses[0]);
 
                 ForwardChaining.Solve();
                 BackwardChaining.Solve();

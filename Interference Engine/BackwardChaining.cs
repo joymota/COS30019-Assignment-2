@@ -14,7 +14,7 @@ namespace IEngine
         // Solves the inference engine using backward chaining.
         public static void Solve()
         {
-            HashSet<string> visited = new HashSet<string>();
+            List<string> visited = new List<string>();
             bool result = BackwardChain(query, visited);
 
             if (result)
@@ -28,7 +28,7 @@ namespace IEngine
         }
 
         // The backward chaining algorithm.
-        public static bool BackwardChain(string goal, HashSet<string> visited)
+        public static bool BackwardChain(string goal, List<string> visited)
         {
             // If the goal is already a known fact
             if (KB.Contains(goal))

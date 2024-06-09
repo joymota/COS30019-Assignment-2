@@ -24,11 +24,11 @@ namespace IEngine {
 
         //Solves the inference engine using forward chaining.
         public static void Solve() {
-            bool var = false;
+            bool goalFound = false;
             sortSymbols();
 
 
-            while (trueClausesQueue.Count > 0 && var == false) {
+            while (trueClausesQueue.Count > 0 && goalFound == false) {
                 string propositionSymbol = trueClausesQueue.Dequeue();
                 
 
@@ -40,15 +40,15 @@ namespace IEngine {
 
                         if (clauseCounts[entry.Key] == 0)
                         {
-
-                            string[] temp = Regex.Split(entry.Key, @"[^a-z0-9]+");
-                            
-                            foreach (string c in temp ) 
-                            {
-                                if(!trueClausesList.Contains(c))
+                            //split clause using =>
+                            //then get the second part, this only works for clauses like a => b; or a & b => c;
+                            string[] parts = entry.Key.Split("=>");
+                            string endOfClause = parts[1];
+                                                    
+                                if(!trueClausesList.Contains(endOfClause))
                                 {
-                                    trueClausesQueue.Enqueue(c);
-                                    trueClausesList.Add(c);
+                                    trueClausesQueue.Enqueue(endOfClause);
+                                    trueClausesList.Add(endOfClause);
                                 }
 
                                 if(checkGoal())
@@ -56,7 +56,7 @@ namespace IEngine {
                                     printResult();
                                     return;
                                 }
-                            }
+                            
                         }
                     }
                 }
@@ -71,7 +71,8 @@ namespace IEngine {
             {
                 if(k.Contains("=>")) 
                 {
-                    int letterCount = CountSymbols(k);
+                    //grab and count symbols on left side
+                    int letterCount = CountSymbols(k.Split("=>")[0]);
 
                     clauseCounts[k] = letterCount;
                 } 
@@ -82,14 +83,13 @@ namespace IEngine {
                     
                 }
             } 
-            //testQueue();
-            //testDict();
+            
         }
 
         //assists in assigning a number to the dictionary entry based off how many symbols each clause has
         public static int CountSymbols(string clause) 
         {
-            int count = -1;
+            int count = 0;
 
             foreach (char c in clause) 
             {
