@@ -87,16 +87,10 @@ namespace IEngine
 
     Notes which helped with the thought process. Will be added to report
 
-    1. if goal is in KB as a fact, return true
-    2. Find all rules which have the goal as their conclusion.
-    3. Find the premises of those
-
     Step 1: Define the knowledge base as per the requirements. 
     Step 2: Set the goal or conclusion to begin the backward chaining process. 
     Step 3: Start and iterate the functions. Check the facts to match the goal. Terminate the process if successful; else, iterate over the rules in the knowledge base. Search to match the conclusion with a current goal. Like forward chaining, recursively invoke the backward chaining process for the rule conditions if there is a match. Repeat the previous process until you reach the endpoint. 
     Step 4: Determine the termination condition for the backward chaining process that can be any specific criteria. Output the final result after reaching the endpoint. 
-
-    
 
     1. Start with initial goal
     2. Finds rule with conclusion is goal
