@@ -145,8 +145,11 @@ namespace IEngine {
 }
 
 
-/* https://builtin.com/artificial-intelligence/forward-chaining-vs-backward-chaining#:~:text=Forward%20chaining%20is%20a%20form,facts%20that%20support%20the%20goal.
-i used this website to help me understand forward chaining. 
+/*
+Notes to be added to report, helped with implementation
+
+https://builtin.com/artificial-intelligence/forward-chaining-vs-backward-chaining#:~:text=Forward%20chaining%20is%20a%20form,facts%20that%20support%20the%20goal.
+I used this website to help me understand forward chaining. 
 
 psuedocode for FC 
 

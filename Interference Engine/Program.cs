@@ -11,34 +11,36 @@ namespace IEngine {
     class Program {
 
         static void Main(string[] args) { 
-            string filename = @"C:\Users\Joshua\Desktop\University\2024\COS30019\Assignment 2\Interference Engine\test_HornKB.txt";
+            string filename = args[1];
             
             if (FileReader.doesFileExist(filename) == false) {
-                Console.WriteLine(filename + "cant be found, please try again.");
+                Console.WriteLine(filename + " cant be found, please try again.");
             } else {
-                KnowledgeBase.ReadFile(filename);
+                KnowledgeBase.ReadFile(filename);                
 
-                ForwardChaining.Solve();
-                BackwardChaining.Solve();
-                TruthTable.Generate(KnowledgeBase.HornClauses, KnowledgeBase.Query);
-/*
                 switch (args[0].ToLower()) {
                     case "tt": {
+                        TruthTable.Generate(KnowledgeBase.HornClauses, KnowledgeBase.Query);
                         
                         break;
                     }
 
                     case "fc": {
-
+                        ForwardChaining.Solve();
                         break;
                     }
 
                     case "bc": {
+                        BackwardChaining.Solve();
+                        break;
+                    }
 
+                    default: {
+                        Console.WriteLine("Invalid method specified");
                         break;
                     }
                 }
-                */ 
+                
             }
         }
 

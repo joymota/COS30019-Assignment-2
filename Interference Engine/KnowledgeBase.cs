@@ -41,14 +41,12 @@ namespace IEngine {
             //Store query from temporary list
             Query = draftList[3].Replace(" ", "");
 
-            //Console.WriteLine(hornClauses[2]);
-            //Console.WriteLine(Query);
         }
 
         //check if file exists
         public static bool doesFileExist(string filename) {
             bool exist = false;
-            if (File.Exists(filename)) {
+            if (Directory.Exists(filename) || File.Exists(filename)) {
                 exist = true;
             }
             return exist;
