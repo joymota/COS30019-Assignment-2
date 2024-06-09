@@ -20,7 +20,7 @@ namespace IEngine {
 
                 ForwardChaining.Solve();
                 BackwardChaining.Solve();
-
+                TruthTable.Generate(KnowledgeBase.HornClauses, KnowledgeBase.Query);
 /*
                 switch (args[0].ToLower()) {
                     case "tt": {
